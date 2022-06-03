@@ -1,0 +1,13 @@
+
+Processing: POS Acquring Dollar process
+Department: Electronic Product Operations
+
+Dear Team, 
+
+Please be informed that, I encountered the following error:
+
+ExceptionMessage
+
+Thank you.
+
+Best Regards

@@ -1,0 +1,14 @@
+
+Processing: POS Acquring Dollar process
+Department: Electronic Product Operations
+
+Dear Team, 
+
+Please be informed that, I encountered the following error:
+
+ExceptionMessage
+
+See attached for more information
+Kindly retry or forward this to VISA Bot Support Desk. Thank you.
+
+Best Regards

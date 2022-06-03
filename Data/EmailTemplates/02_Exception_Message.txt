@@ -1,0 +1,14 @@
+
+Processing: POS Acquring Dollar process
+Department: Electronic Product Operations
+
+Dear Team, 
+
+Please be informed that, I encountered the following error:
+
+ExceptionMessage
+
+See attached for more information
+Kindly change the password and also the password must be update in the UiPath Orchestrator.
+
+Best Regards
