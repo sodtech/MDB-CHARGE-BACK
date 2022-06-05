@@ -2,11 +2,9 @@
   <x:Members>
     <x:Property Name="in_reportDate" Type="InArgument(x:String)" />
     <x:Property Name="out_reportDate" Type="OutArgument(x:String)" />
-    <x:Property Name="out_SelectorDate" Type="OutArgument(x:String)" />
-    <x:Property Name="out_Date" Type="OutArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>815,515</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>778,515</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
@@ -77,7 +75,6 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="This work flow take use the current date or pick the user input date if set.&#xA;The expected date  is (dd/mm/yyyy) otherwise exception will be thrown." DisplayName="Get_Date" sap:VirtualizedContainerService.HintSize="304,406" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -118,7 +115,7 @@
         </InArgument>
       </Assign.Value>
     </Assign>
-    <If DisplayName="Get the Date to Use" sap:VirtualizedContainerService.HintSize="484,224" sap2010:WorkflowViewState.IdRef="If_1">
+    <If DisplayName="Get the Date to Use" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Condition>
         <InArgument x:TypeArguments="x:Boolean">
           <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13" xml:space="preserve">in_reportDate.ToUpper() == "DEFAULT" || in_reportDate == " "  || in_reportDate == ""</mca:CSharpValue>
@@ -146,7 +143,7 @@
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:String">
-                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">DateTime.Now.AddDays(-1).ToString("dd-MM-yyyy")</mca:CSharpValue>
+                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46">DateTime.Now.ToString("dd-MM-yyyy")</mca:CSharpValue>
               </InArgument>
             </Assign.Value>
           </Assign>
@@ -169,7 +166,7 @@
         <Sequence DisplayName="Get the user input date" sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -338,7 +335,7 @@
                   </Assign.To>
                   <Assign.Value>
                     <InArgument x:TypeArguments="x:String">
-                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">DateValidate.AddDays(-1).ToString("dd-MM-yyyy")</mca:CSharpValue>
+                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">DateValidate.ToString("dd-MM-yyyy")</mca:CSharpValue>
                     </InArgument>
                   </Assign.Value>
                 </Assign>

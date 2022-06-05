@@ -82,19 +82,17 @@
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart sap2010:Annotation.AnnotationText="This module evaluates the presence or absence of an Work  file (in the Processing work folder and Incoming work folder), and returns a decision based on the underlisted possible scenarios...&#xA;" DisplayName="Input_File_Checkpoint" sap:VirtualizedContainerService.HintSize="844,708" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
-      <Variable x:TypeArguments="x:Boolean" Name="IncomingFileExists" />
       <Variable x:TypeArguments="x:Boolean" Name="ProcessingFileExists" />
-      <Variable x:TypeArguments="x:String" Name="IncomingInputFilePath" />
       <Variable x:TypeArguments="x:String" Name="ProcessingInputFilePath" />
       <Variable x:TypeArguments="x:String" Name="MDBCell" />
       <Variable x:TypeArguments="x:String" Name="EmailCell" />
       <Variable x:TypeArguments="x:String" Name="EmailRecivedCell" />
       <Variable x:TypeArguments="x:String" Name="TrackerPath" />
-      <Variable x:TypeArguments="x:Boolean" Name="IsTrue" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -108,14 +106,14 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID6</x:Reference>
+      <x:Reference>__ReferenceID5</x:Reference>
     </Flowchart.StartNode>
     <FlowStep x:Name="__ReferenceID0">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">420,24.5</av:Point>
           <av:Size x:Key="ShapeSize">200,51</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">520,75.5 520,130</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">520,75.5 520,166.666666666667</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:PathExists DisplayName="Work Log File Exists" Exists="[ProcessingFileExists]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="PathExists_2" Path="[ProcessingInputFilePath]" PathType="File">
@@ -126,106 +124,85 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:PathExists>
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID5">
+        <FlowDecision x:Name="__ReferenceID1" DisplayName="Case 1 ?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+          <FlowDecision.Condition>
+            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ProcessingFileExists  AndAlso MDBCell = &quot;DONE&quot; AndAlso EmailCell = &quot;DONE&quot; AndAlso EmailRecivedCell =&quot;DONE&quot;" />
+          </FlowDecision.Condition>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">389,130</av:Point>
-              <av:Size x:Key="ShapeSize">262,60</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">520,190 520,246.666666666667</av:PointCollection>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <av:Point x:Key="ShapeLocation">485,166.666666666667</av:Point>
+              <av:Size x:Key="ShapeSize">70,87</av:Size>
+              <av:PointCollection x:Key="TrueConnector">485,210.166666666667 350,210.166666666667 350,326</av:PointCollection>
+              <av:PointCollection x:Key="FalseConnector">555,210.166666666667 600,210.166666666667 600,397</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Assign IsTrue" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:Boolean">[IsTrue]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:Boolean">[(ProcessingFileExists AndAlso MDBCell is "DONE" AndAlso EmailCell is "DONE" AndAlso EmailRecivedCell is"DONE")]</InArgument>
-            </Assign.Value>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </Assign>
-          <FlowStep.Next>
-            <FlowDecision x:Name="__ReferenceID1" Condition="[IsTrue]" DisplayName="Case 1 ?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+          <FlowDecision.True>
+            <FlowStep x:Name="__ReferenceID2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <av:Point x:Key="ShapeLocation">485,246.666666666667</av:Point>
-                  <av:Size x:Key="ShapeSize">70,87</av:Size>
-                  <av:PointCollection x:Key="TrueConnector">485,290.166666666667 350,290.166666666667 350,326</av:PointCollection>
-                  <av:PointCollection x:Key="FalseConnector">555,290.166666666667 600,290.166666666667 600,397</av:PointCollection>
+                  <av:Point x:Key="ShapeLocation">250,326</av:Point>
+                  <av:Size x:Key="ShapeSize">200,66</av:Size>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <FlowDecision.True>
-                <FlowStep x:Name="__ReferenceID2">
+              <Sequence DisplayName="Case 1 Use File in Processing" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Work File Found in Processing&quot;]" />
+                <Assign DisplayName="Assign CheckpointInputFile" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[out_WorkFileCheck]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">PROCESSING</InArgument>
+                  </Assign.Value>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">250,326</av:Point>
-                      <av:Size x:Key="ShapeSize">200,66</av:Size>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Case 1 Use File in Processing" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Work File Found in Processing&quot;]" />
-                    <Assign DisplayName="Assign CheckpointInputFile" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[out_WorkFileCheck]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">PROCESSING</InArgument>
-                      </Assign.Value>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </Assign>
-                  </Sequence>
-                </FlowStep>
-              </FlowDecision.True>
-              <FlowDecision.False>
-                <FlowStep x:Name="__ReferenceID3">
+                </Assign>
+              </Sequence>
+            </FlowStep>
+          </FlowDecision.True>
+          <FlowDecision.False>
+            <FlowStep x:Name="__ReferenceID3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">500,397</av:Point>
+                  <av:Size x:Key="ShapeSize">200,66</av:Size>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Sequence DisplayName="Case 2 Downlod From Portal" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message Incoming" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Work File Not Found in Processing Folder&quot;]" />
+                <Assign DisplayName="Assign CheckpointInputFile" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[out_WorkFileCheck]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">DOWNLOAD</InArgument>
+                  </Assign.Value>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">500,397</av:Point>
-                      <av:Size x:Key="ShapeSize">200,66</av:Size>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Case 2 Downlod From Portal" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message Incoming" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Work File Not Found in Processing Folder&quot;]" />
-                    <Assign DisplayName="Assign CheckpointInputFile" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[out_WorkFileCheck]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">DOWNLOAD</InArgument>
-                      </Assign.Value>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </Assign>
-                  </Sequence>
-                </FlowStep>
-              </FlowDecision.False>
-            </FlowDecision>
-          </FlowStep.Next>
-        </FlowStep>
+                </Assign>
+              </Sequence>
+            </FlowStep>
+          </FlowDecision.False>
+        </FlowDecision>
       </FlowStep.Next>
     </FlowStep>
-    <FlowStep x:Name="__ReferenceID6">
+    <FlowStep x:Name="__ReferenceID5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">130,14.5</av:Point>
@@ -261,7 +238,7 @@
               <av:PointCollection x:Key="ConnectorLocation">330,148.5 360,148.5 360,50 420,50</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Checking For Downloaded File" sap:VirtualizedContainerService.HintSize="526,981" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Checking For Downloaded File" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="TrackerExist" />
             </Sequence.Variables>
@@ -350,6 +327,5 @@
     <x:Reference>__ReferenceID2</x:Reference>
     <x:Reference>__ReferenceID3</x:Reference>
     <x:Reference>__ReferenceID4</x:Reference>
-    <x:Reference>__ReferenceID5</x:Reference>
   </Flowchart>
 </Activity>

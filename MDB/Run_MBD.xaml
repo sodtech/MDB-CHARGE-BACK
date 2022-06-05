@@ -2,7 +2,7 @@
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_Sisfig" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
-    <x:Property Name="out_TotalLcyAmount" Type="InArgument(x:Decimal)" />
+    <x:Property Name="out_TotalLcyAmount" Type="OutArgument(x:Decimal)" />
   </x:Members>
   <this:MDB.in_Config>
     <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
@@ -10,11 +10,8 @@
   <this:MDB.in_Sisfig>
     <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
   </this:MDB.in_Sisfig>
-  <this:MDB.out_TotalLcyAmount>
-    <InArgument x:TypeArguments="x:Decimal" />
-  </this:MDB.out_TotalLcyAmount>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>849,1104</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>778,1104</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="66">
@@ -100,7 +97,6 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -137,7 +133,7 @@
     </ui:LogMessage>
     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="431,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_91">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="473,143" sap2010:WorkflowViewState.IdRef="Sequence_91">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>

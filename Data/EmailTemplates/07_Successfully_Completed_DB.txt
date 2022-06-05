@@ -4,8 +4,6 @@ Department: Electronic Product Operations
 
 Dear Team, 
 
-Please be informed that MDB Charge Back report for the day is available.
-
-Kindly find attached for your review.
+Please the total LYC Amount is not the same as the amount found in the finacle DB.
 
 Best Regards

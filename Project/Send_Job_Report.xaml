@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Send_Job_Report" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Send_Job_Report" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_Sisfig" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
@@ -6,10 +6,10 @@
     <x:Property Name="in_reportDate" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1054,1536</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>798,2143</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="33">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -43,10 +43,10 @@
       <x:String>UiPath.Mail.Exchange</x:String>
       <x:String>System.Security</x:String>
       <x:String>UiPath.Mail.Exchange.Activities</x:String>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
       <AssemblyReference>Microsoft.CSharp</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
@@ -85,10 +85,11 @@
       <AssemblyReference>Microsoft.Exchange.WebServices</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Send_Job_Report" sap:VirtualizedContainerService.HintSize="515,1471" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Send_Job_Report" sap:VirtualizedContainerService.HintSize="515,2078" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="workLogFilePath" />
       <Variable x:TypeArguments="x:String" Name="TodayTimeStamp" />
@@ -101,7 +102,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="473,52" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="473,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">"Reporting Started"</mca:CSharpValue>
@@ -114,7 +115,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <Sequence DisplayName="Archive Worklog File" sap:VirtualizedContainerService.HintSize="473,776" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Archive Worklog File" sap:VirtualizedContainerService.HintSize="473,772" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="UploadFolderPath" />
       </Sequence.Variables>
@@ -124,7 +125,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="431,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="431,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="473,143" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
@@ -295,7 +296,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431,255" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+      <ui:MultipleAssign DisplayName="Multiple Assign WF Variables" sap:VirtualizedContainerService.HintSize="431,255" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
@@ -379,7 +380,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:MultipleAssign>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Validate_Folder" sap:VirtualizedContainerService.HintSize="431,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Project\\Validate_Work_Folders.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Validate_Folder" sap:VirtualizedContainerService.HintSize="431,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Project\\Validate_Work_Folders.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="In_PathFolder">
             <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">TodayPathFolder</mca:CSharpValue>
@@ -392,7 +393,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
-      <ui:MoveFile ContinueOnError="{x:Null}" DisplayName="MoveWork File" sap:VirtualizedContainerService.HintSize="431,52" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="False">
+      <ui:MoveFile ContinueOnError="{x:Null}" DisplayName="MoveWork File" sap:VirtualizedContainerService.HintSize="431,51" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="False">
         <ui:MoveFile.Destination>
           <InArgument x:TypeArguments="x:String">
             <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">newWorkLogFilePath</mca:CSharpValue>
@@ -410,7 +411,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:MoveFile>
-      <ui:MoveFile ContinueOnError="{x:Null}" DisplayName="Move Upload File" sap:VirtualizedContainerService.HintSize="431,52" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="False">
+      <ui:MoveFile ContinueOnError="{x:Null}" DisplayName="Move Upload File" sap:VirtualizedContainerService.HintSize="431,51" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="False">
         <ui:MoveFile.Destination>
           <InArgument x:TypeArguments="x:String">
             <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">newUploadFilePath</mca:CSharpValue>
@@ -429,7 +430,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:MoveFile>
     </Sequence>
-    <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="473.333333333333,471.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="426,696" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="SubjectMail" />
         <Variable x:TypeArguments="x:String" Name="EmailBody" />
@@ -440,7 +441,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="Assign SubjectMail" sap:VirtualizedContainerService.HintSize="384,62" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign DisplayName="Assign SubjectMail" sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">
             <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_28">SubjectMail</mca:CSharpReference>
@@ -448,18 +449,18 @@
         </Assign.To>
         <Assign.Value>
           <InArgument x:TypeArguments="x:String">
-            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">"POS ACQ Dollar: Job Report_"+DateTime.Now.ToString("dd-MM-yyyy_HHmmss")</mca:CSharpValue>
+            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">"MDB: Job Report_"+DateTime.Now.ToString("dd-MM-yyyy_HHmmss")</mca:CSharpValue>
           </InArgument>
         </Assign.Value>
       </Assign>
-      <ui:ReadTextFile DisplayName="Read Text File" FileName="Data\\EmailTemplates\\Successfully_Completed.txt" sap:VirtualizedContainerService.HintSize="384,80.6666666666667" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
+      <ui:ReadTextFile DisplayName="Read Text File" FileName="Data\\EmailTemplates\\Successfully_Completed.txt" sap:VirtualizedContainerService.HintSize="384,79" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
         <ui:ReadTextFile.Content>
           <OutArgument x:TypeArguments="x:String">
             <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_33">EmailBody</mca:CSharpReference>
           </OutArgument>
         </ui:ReadTextFile.Content>
       </ui:ReadTextFile>
-      <ui:SendExchangeMail ApplicationId="{x:Null}" Bcc="{x:Null}" DirectoryId="{x:Null}" Domain="{x:Null}" EmailAutodiscover="{x:Null}" MailMessage="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" AuthenticationMode="UserNameAndPassword" DisplayName="Send Exchange Mail Message" ExchangeVersion="Exchange2007_SP1" sap:VirtualizedContainerService.HintSize="384,156.666666666667" sap2010:WorkflowViewState.IdRef="SendExchangeMail_1" IsBodyHtml="False" IsDraft="False" Name="MIGS Bot" Password="Ce$t@518tabl" SaveCopy="False" Server="https://outlook.office365.com" User="rparobot@firstbanknigeria.com">
+      <ui:SendExchangeMail ApplicationId="{x:Null}" Bcc="{x:Null}" DirectoryId="{x:Null}" Domain="{x:Null}" EmailAutodiscover="{x:Null}" MailMessage="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" AuthenticationMode="UserNameAndPassword" DisplayName="Send Exchange Mail Message" ExchangeVersion="Exchange2007_SP1" sap:VirtualizedContainerService.HintSize="384,148" sap2010:WorkflowViewState.IdRef="SendExchangeMail_1" IsBodyHtml="False" IsDraft="False" Name="MIGS Bot" Password="Ce$t@518tabl" SaveCopy="False" Server="https://outlook.office365.com" User="rparobot@firstbanknigeria.com">
         <ui:SendExchangeMail.Body>
           <InArgument x:TypeArguments="x:String">
             <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">EmailBody</mca:CSharpValue>
@@ -494,6 +495,83 @@
           </InArgument>
         </ui:SendExchangeMail.To>
       </ui:SendExchangeMail>
+      <Sequence DisplayName="Sequence: Delete Tracker" sap:VirtualizedContainerService.HintSize="384,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="Tracker" />
+          <Variable x:TypeArguments="x:Boolean" Name="TrackerExist" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign DisplayName="Assign Tracker" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">
+              <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_38">Tracker</mca:CSharpReference>
+            </OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">
+              <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_65">Path.Combine(in_Config["ProcessingFolderPath"].ToString(),"Tracker.xlsx")</mca:CSharpValue>
+            </InArgument>
+          </Assign.Value>
+        </Assign>
+        <ui:PathExists DisplayName="Path Exists: Tracker Exist?" sap:VirtualizedContainerService.HintSize="484,89" sap2010:WorkflowViewState.IdRef="PathExists_1" PathType="File">
+          <ui:PathExists.Exists>
+            <OutArgument x:TypeArguments="x:Boolean">
+              <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_37">TrackerExist</mca:CSharpReference>
+            </OutArgument>
+          </ui:PathExists.Exists>
+          <ui:PathExists.Path>
+            <InArgument x:TypeArguments="x:String">
+              <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">Tracker</mca:CSharpValue>
+            </InArgument>
+          </ui:PathExists.Path>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:PathExists>
+        <If DisplayName="If TrackerExist" sap:VirtualizedContainerService.HintSize="484,266" sap2010:WorkflowViewState.IdRef="If_2">
+          <If.Condition>
+            <InArgument x:TypeArguments="x:Boolean">
+              <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">TrackerExist</mca:CSharpValue>
+            </InArgument>
+          </If.Condition>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If.Then>
+            <ui:DeleteFileX DisplayName="Delete  Tracker File" sap:VirtualizedContainerService.HintSize="384,79" sap2010:WorkflowViewState.IdRef="DeleteFileX_1">
+              <ui:DeleteFileX.Path>
+                <InArgument x:TypeArguments="x:String">
+                  <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">Tracker</mca:CSharpValue>
+                </InArgument>
+              </ui:DeleteFileX.Path>
+            </ui:DeleteFileX>
+          </If.Then>
+        </If>
+      </Sequence>
+      <ui:LogMessage DisplayName="Log Message: Report Mail Sent" sap:VirtualizedContainerService.HintSize="384,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
+        <ui:LogMessage.Message>
+          <InArgument x:TypeArguments="x:Object">
+            <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">"Report Mail Sent"</mca:CSharpValue>
+          </InArgument>
+        </ui:LogMessage.Message>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:LogMessage>
     </Sequence>
   </Sequence>
 </Activity>

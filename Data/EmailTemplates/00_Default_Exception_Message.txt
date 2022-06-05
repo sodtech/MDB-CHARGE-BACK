@@ -1,5 +1,5 @@
 
-Processing: POS Acquring Dollar process
+Processing: Visa MDB Charge Back process process
 Department: Electronic Product Operations
 
 Dear Team, 

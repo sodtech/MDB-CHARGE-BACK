@@ -5,7 +5,7 @@
     <x:Property Name="io_reportDate" Type="InOutArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>803,966</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>778,2261</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="47">
@@ -104,7 +104,6 @@
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -112,7 +111,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Download_Required_Report" sap:VirtualizedContainerService.HintSize="242,901" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Download_Required_Report" sap:VirtualizedContainerService.HintSize="510,2196" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ftpURL" />
       <Variable x:TypeArguments="x:String" Name="ftpCredential" />
@@ -142,7 +141,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Report Download Log" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
+    <ui:LogMessage DisplayName="Report Download Log" sap:VirtualizedContainerService.HintSize="468,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_280">"MDB Report download Begin"</mca:CSharpValue>
@@ -155,7 +154,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_11">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="468,51" sap2010:WorkflowViewState.IdRef="CommentOut_11">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="473,143" sap2010:WorkflowViewState.IdRef="Sequence_92">
           <sap:WorkflowViewStateService.ViewState>
@@ -372,7 +371,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="468,51" sap2010:WorkflowViewState.IdRef="CommentOut_8">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="346,158" sap2010:WorkflowViewState.IdRef="Sequence_51">
           <sap:WorkflowViewStateService.ViewState>
@@ -425,7 +424,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:MultipleAssign DisplayName="Assign all WF Varables" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Assign all WF Varables" sap:VirtualizedContainerService.HintSize="468,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -591,7 +590,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <TryCatch DisplayName="Try Catch FTP Credentials" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+    <TryCatch DisplayName="Try Catch FTP Credentials" sap:VirtualizedContainerService.HintSize="468,51" sap2010:WorkflowViewState.IdRef="TryCatch_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -644,7 +643,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch DisplayName="Try Catch: Download " sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+    <TryCatch DisplayName="Try Catch: Download " sap:VirtualizedContainerService.HintSize="468,51" sap2010:WorkflowViewState.IdRef="TryCatch_8">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1445,7 +1444,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <Sequence DisplayName="Checking Downloaded File" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_52">
+    <Sequence DisplayName="Checking Downloaded File" sap:VirtualizedContainerService.HintSize="468,66" sap2010:WorkflowViewState.IdRef="Sequence_52">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1542,14 +1541,14 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Move to downloaded report" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_91">
+    <Sequence DisplayName="Move to downloaded report" sap:VirtualizedContainerService.HintSize="468,1297" sap2010:WorkflowViewState.IdRef="Sequence_91">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="Get Full Directory Name for the Report" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+      <Assign DisplayName="Get Full Directory Name for the Report" sap:VirtualizedContainerService.HintSize="426,60" sap2010:WorkflowViewState.IdRef="Assign_21">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">
             <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_146">downloadedFullPath</mca:CSharpReference>
@@ -1561,7 +1560,7 @@
           </InArgument>
         </Assign.Value>
       </Assign>
-      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
+      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="426,51" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
         <ueab:ExcelProcessScopeX.Body>
           <ActivityAction x:TypeArguments="ui:IExcelProcess">
             <ActivityAction.Argument>
@@ -1614,7 +1613,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ueab:ExcelProcessScopeX>
-      <Sequence DisplayName="Sequence Delete Rows" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_89">
+      <Sequence DisplayName="Sequence Delete Rows" sap:VirtualizedContainerService.HintSize="426,66" sap2010:WorkflowViewState.IdRef="Sequence_89">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1713,7 +1712,7 @@
           </sap:WorkflowViewStateService.ViewState>
         </ui:RemoveDataRow>
       </Sequence>
-      <ui:FilterDataTable DisplayName="Filter Data Table inputDT" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" SelectColumnsMode="Keep">
+      <ui:FilterDataTable DisplayName="Filter Data Table inputDT" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="426,51" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" SelectColumnsMode="Keep">
         <ui:FilterDataTable.DataTable>
           <InArgument x:TypeArguments="sd:DataTable">
             <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_330">inputDT</mca:CSharpValue>
@@ -1752,7 +1751,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:FilterDataTable>
-      <ui:DeleteFileX DisplayName="Delete the Downloaded Report File" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="DeleteFileX_4">
+      <ui:DeleteFileX DisplayName="Delete the Downloaded Report File" sap:VirtualizedContainerService.HintSize="426,51" sap2010:WorkflowViewState.IdRef="DeleteFileX_4">
         <ui:DeleteFileX.Path>
           <InArgument x:TypeArguments="x:String">
             <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_338">downloadedFullPath</mca:CSharpValue>
@@ -1765,7 +1764,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:DeleteFileX>
-      <ui:CopyFile ContinueOnError="{x:Null}" DisplayName="Copy File To Temp Folder" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="True" Path="Data\\OtherTemplates\\MDB_WorkLog.xlsx">
+      <ui:CopyFile ContinueOnError="{x:Null}" DisplayName="Copy File To Temp Folder" sap:VirtualizedContainerService.HintSize="426,51" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="True" Path="Data\\OtherTemplates\\MDB_WorkLog.xlsx">
         <ui:CopyFile.Destination>
           <InArgument x:TypeArguments="x:String">
             <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_334">exceptionFolderPath</mca:CSharpValue>
@@ -1778,7 +1777,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CopyFile>
-      <ui:WriteRange AddHeaders="False" DisplayName="Write DT to Temp Folder" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_5" StartingCell="A2">
+      <ui:WriteRange AddHeaders="False" DisplayName="Write DT to Temp Folder" sap:VirtualizedContainerService.HintSize="426,115" sap2010:WorkflowViewState.IdRef="WriteRange_5" StartingCell="A2">
         <ui:WriteRange.DataTable>
           <InArgument x:TypeArguments="sd:DataTable">
             <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_335">inputDT</mca:CSharpValue>
@@ -1801,15 +1800,15 @@
           </InArgument>
         </ui:WriteRange.WorkbookPath>
       </ui:WriteRange>
-      <Sequence DisplayName="Creat WorkLog To Proceesing" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_90">
+      <Sequence DisplayName="Creat WorkLog To Proceesing" sap:VirtualizedContainerService.HintSize="426,480" sap2010:WorkflowViewState.IdRef="Sequence_90">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Name="dt_TempFile" />
           <Variable x:TypeArguments="x:String" Name="path" />
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <ui:LogMessage DisplayName="Downloaded report to Processing Log Message" sap:VirtualizedContainerService.HintSize="384,91" sap2010:WorkflowViewState.IdRef="LogMessage_28" Level="Info">
@@ -1857,11 +1856,11 @@
         </ui:MoveFile>
       </Sequence>
     </Sequence>
-    <ui:WriteCell Cell="A2" DisplayName="Write MDB Cell" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Tracker Sheet" Text="DONE">
+    <ui:WriteCell Cell="B2" DisplayName="Write MDB Cell" sap:VirtualizedContainerService.HintSize="468,115" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Tracker Sheet" Text="DONE">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:WriteCell.WorkbookPath>

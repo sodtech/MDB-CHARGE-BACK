@@ -1,18 +1,10 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Send_Job_Report" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Send_Job_Report" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
-    <x:Property Name="in_SubjectMail" Type="InArgument(x:String)" />
-    <x:Property Name="in_EmailBody" Type="InArgument(x:String)" />
-    <x:Property Name="in_ScreenshotPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_Sisfig" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
-  <this:Send_Job_Report.in_SubjectMail>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Send_Job_Report.in_SubjectMail>
-  <this:Send_Job_Report.in_EmailBody>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Send_Job_Report.in_EmailBody>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>796,515</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>778,526</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -91,10 +83,12 @@
       <AssemblyReference>Microsoft.Exchange.WebServices</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="376,240" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="426,461" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="SubjectMail" />
       <Variable x:TypeArguments="x:String" Name="EmailBody" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -103,10 +97,35 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:SendExchangeMail ApplicationId="{x:Null}" Bcc="{x:Null}" DirectoryId="{x:Null}" Domain="{x:Null}" EmailAutodiscover="{x:Null}" MailMessage="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" AuthenticationMode="UserNameAndPassword" DisplayName="Send Exchange Mail Message" ExchangeVersion="Exchange2007_SP1" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="SendExchangeMail_2" IsBodyHtml="False" IsDraft="False" Name="MIGS Bot" Password="Ce$t@518tabl" SaveCopy="False" Server="https://outlook.office365.com" User="rparobot@firstbanknigeria.com">
+    <Assign DisplayName="Assign SubjectMail" sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">
+          <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_36">SubjectMail</mca:CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">"MDB_"+DateTime.Now.ToString("dd-MM-yyyy_HHmmss")</mca:CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ReadTextFile DisplayName="Read Text File Temp 07" FileName="Data\\EmailTemplates\\07_Successfully_Completed_DB.txt" sap:VirtualizedContainerService.HintSize="384,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_2">
+      <ui:ReadTextFile.Content>
+        <OutArgument x:TypeArguments="x:String">
+          <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_37">EmailBody</mca:CSharpReference>
+        </OutArgument>
+      </ui:ReadTextFile.Content>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ReadTextFile>
+    <ui:SendExchangeMail ApplicationId="{x:Null}" Bcc="{x:Null}" DirectoryId="{x:Null}" Domain="{x:Null}" EmailAutodiscover="{x:Null}" MailMessage="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" AuthenticationMode="UserNameAndPassword" DisplayName="Send Exchange Mail Message" ExchangeVersion="Exchange2007_SP1" sap:VirtualizedContainerService.HintSize="384,149" sap2010:WorkflowViewState.IdRef="SendExchangeMail_2" IsBodyHtml="False" IsDraft="False" Name="MIGS Bot" Password="Ce$t@518tabl" SaveCopy="False" Server="https://outlook.office365.com" User="rparobot@firstbanknigeria.com">
       <ui:SendExchangeMail.Body>
         <InArgument x:TypeArguments="x:String">
-          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_65">in_EmailBody</mca:CSharpValue>
+          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_65">EmailBody</mca:CSharpValue>
         </InArgument>
       </ui:SendExchangeMail.Body>
       <ui:SendExchangeMail.Cc>
@@ -114,11 +133,6 @@
           <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">in_Config["ReportEmailCc"].ToString()</mca:CSharpValue>
         </InArgument>
       </ui:SendExchangeMail.Cc>
-      <ui:SendExchangeMail.Files>
-        <InArgument x:TypeArguments="x:String">
-          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">in_ScreenshotPath</mca:CSharpValue>
-        </InArgument>
-      </ui:SendExchangeMail.Files>
       <ui:SendExchangeMail.From>
         <InArgument x:TypeArguments="x:String">
           <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">in_Config["RobotEmailAddress"].ToString()</mca:CSharpValue>
@@ -126,7 +140,7 @@
       </ui:SendExchangeMail.From>
       <ui:SendExchangeMail.Subject>
         <InArgument x:TypeArguments="x:String">
-          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">in_SubjectMail</mca:CSharpValue>
+          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">SubjectMail</mca:CSharpValue>
         </InArgument>
       </ui:SendExchangeMail.Subject>
       <ui:SendExchangeMail.To>

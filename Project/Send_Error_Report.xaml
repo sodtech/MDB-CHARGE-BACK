@@ -11,7 +11,7 @@
     <InArgument x:TypeArguments="x:String" />
   </this:Send_Job_Report.in_EmailBody>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>664,466</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>796,515</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -92,49 +92,42 @@
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Send_Job_Report" sap:VirtualizedContainerService.HintSize="418,340.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="376,240" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="EmailBody" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="376,248.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
-      <Sequence.Variables>
-        <Variable x:TypeArguments="x:String" Name="EmailBody" />
-      </Sequence.Variables>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:SendExchangeMail ApplicationId="{x:Null}" Bcc="{x:Null}" DirectoryId="{x:Null}" Domain="{x:Null}" EmailAutodiscover="{x:Null}" MailMessage="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" AuthenticationMode="UserNameAndPassword" DisplayName="Send Exchange Mail Message" ExchangeVersion="Exchange2007_SP1" sap:VirtualizedContainerService.HintSize="334,156.666666666667" sap2010:WorkflowViewState.IdRef="SendExchangeMail_1" IsBodyHtml="False" IsDraft="False" Name="MIGS Bot" Password="Ce$t@518tabl" SaveCopy="False" Server="https://outlook.office365.com" User="rparobot@firstbanknigeria.com">
-        <ui:SendExchangeMail.Body>
-          <InArgument x:TypeArguments="x:String">
-            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">in_EmailBody</mca:CSharpValue>
-          </InArgument>
-        </ui:SendExchangeMail.Body>
-        <ui:SendExchangeMail.Cc>
-          <InArgument x:TypeArguments="x:String">
-            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">in_Config["ReportEmailCc"].ToString()</mca:CSharpValue>
-          </InArgument>
-        </ui:SendExchangeMail.Cc>
-        <ui:SendExchangeMail.From>
-          <InArgument x:TypeArguments="x:String">
-            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46">in_Config["RobotEmailAddress"].ToString()</mca:CSharpValue>
-          </InArgument>
-        </ui:SendExchangeMail.From>
-        <ui:SendExchangeMail.Subject>
-          <InArgument x:TypeArguments="x:String">
-            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">in_SubjectMail</mca:CSharpValue>
-          </InArgument>
-        </ui:SendExchangeMail.Subject>
-        <ui:SendExchangeMail.To>
-          <InArgument x:TypeArguments="x:String">
-            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">in_Config["ReportEmailTo"].ToString()</mca:CSharpValue>
-          </InArgument>
-        </ui:SendExchangeMail.To>
-      </ui:SendExchangeMail>
-    </Sequence>
+    <ui:SendExchangeMail ApplicationId="{x:Null}" Bcc="{x:Null}" DirectoryId="{x:Null}" Domain="{x:Null}" EmailAutodiscover="{x:Null}" MailMessage="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" AuthenticationMode="UserNameAndPassword" DisplayName="Send Exchange Mail Message" ExchangeVersion="Exchange2007_SP1" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="SendExchangeMail_2" IsBodyHtml="False" IsDraft="False" Name="MIGS Bot" Password="Ce$t@518tabl" SaveCopy="False" Server="https://outlook.office365.com" User="rparobot@firstbanknigeria.com">
+      <ui:SendExchangeMail.Body>
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">in_EmailBody</mca:CSharpValue>
+        </InArgument>
+      </ui:SendExchangeMail.Body>
+      <ui:SendExchangeMail.Cc>
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">in_Config["ReportEmailCc"].ToString()</mca:CSharpValue>
+        </InArgument>
+      </ui:SendExchangeMail.Cc>
+      <ui:SendExchangeMail.From>
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_65">in_Config["RobotEmailAddress"].ToString()</mca:CSharpValue>
+        </InArgument>
+      </ui:SendExchangeMail.From>
+      <ui:SendExchangeMail.Subject>
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">in_SubjectMail</mca:CSharpValue>
+        </InArgument>
+      </ui:SendExchangeMail.Subject>
+      <ui:SendExchangeMail.To>
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">in_Config["ReportEmailTo"].ToString()</mca:CSharpValue>
+        </InArgument>
+      </ui:SendExchangeMail.To>
+    </ui:SendExchangeMail>
   </Sequence>
 </Activity>
